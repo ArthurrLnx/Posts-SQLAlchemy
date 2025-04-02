@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teste1</title>
+</head>
+<body>
+      <div class="content">
+           {% for post in posts %}
+              <div class="post">
+                <p><b>#ID do post: {{ post.id }}</b></p>
+                 <b>
+                    <p class="title">
+                            <b>{{ post.title }}</b>
+                    </p>
+                </b>
+
+                <div class="content">
+                     <p>{{post.content}}</p>
+                </div>
+
+                {% for comment in post.comments %}
+                <div class="content">
+                     <p>{{comment.content}}</p>
+                </div>
+                {% endfor %}
+
+                {% for comment in post.comments %}
+                <div class="content">
+                    <p>{{comment.content}}</p>
+                </div>
+                {% endfor %}
+
+              </div>
+          <div>
+                <a href="{{post.id}}/insere_comentario" comentario class="btn btn-secondary btn-xs">Insert name </a>
+           </div>
+     {% endfor %}
+        <hr>
+</div>
+</body>
+</html>

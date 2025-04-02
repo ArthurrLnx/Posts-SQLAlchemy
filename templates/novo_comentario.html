@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>teste1</title>
+</head>
+<body>
+      <h2 style="text-align: center;">Adicionar Novo Comentário</h2>
+<hr>
+<p><b>ID do POST %{{ post.id }}</b></p>
+                <b>
+<div class="content">
+                    <p>{{post.content}}</p>
+                </div>
+<form action="{{url_for('insere_comentario', id=post.id)}}" method="POST" class="form-control">
+    <label>Comentário</label>
+    <input class="form-control" type="text" name="content" placeholder="Comentário" required>
+
+    <button class="btn btn-success">Adicionar</button>
+</form>
+</body>
+</html>
